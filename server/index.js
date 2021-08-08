@@ -11,6 +11,8 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+const PORT = process.env.PORT || 3000;
+
 // connecting to database
 mongoose.connect(
   'mongodb+srv://eric:test@123@cluster0.vwtix.mongodb.net/barc-foundation?retryWrites=true&w=majority',
@@ -24,6 +26,6 @@ app.use(routes, (err) => {
   console.log(err);
 });
 
-app.listen(5000, (err) => {
+app.listen(PORT, (err) => {
   console.log('serving on port 5000');
 });
