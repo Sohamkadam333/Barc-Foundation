@@ -1307,7 +1307,7 @@
             body: JSON.stringify(user_data),
           }
         );
-
+        console.log(user_data);
         formClass.reset();
       }
 
@@ -1323,7 +1323,6 @@
         };
 
         console.log(user_email);
-        console.log(user_data);
 
         const response = fetch(
           'https://barc-foundation.herokuapp.com/insert-newsLetter',
@@ -1335,7 +1334,7 @@
             body: JSON.stringify(user_data),
           }
         );
-
+        console.log(user_data);
         newsLetterClass.reset();
       }
 
