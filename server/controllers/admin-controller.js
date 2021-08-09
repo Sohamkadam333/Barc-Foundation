@@ -8,7 +8,6 @@ const getHomePage = (req, res) => {
 const addUserToDatabase = (req, res) => {
   const { user_name, user_email, user_message } =
     req.body;
-  console.log(req.body);
   const user = new UserModel({
     user_name: user_name,
     user_email: user_email,
@@ -23,7 +22,6 @@ const addUserToDatabase = (req, res) => {
 
 const addUserToNewsLetter = (req, res) => {
   const { user_email } = req.body;
-  console.log(req.body);
   const newsLetter = new NewsletterModel({
     user_email: user_email,
   });
