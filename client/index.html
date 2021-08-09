@@ -925,12 +925,13 @@
               >
             </h1>
             <!-- Heading -->
-            <form action="index.html#">
+            <form class="newsLetter-class">
               <input
                 type="text"
                 name=""
                 value=""
-                placeholder=""
+                placeholder="Please enter your email"
+                id="newsLetter-input"
                 required
               /><!-- E-Mail -->
               <input
@@ -1273,6 +1274,11 @@
         '.form-class'
       );
 
+      let newsLetterClass =
+        document.querySelector(
+          '.newsLetter-class'
+        );
+
       function submitForm(e) {
         e.preventDefault();
 
@@ -1305,7 +1311,41 @@
         formClass.reset();
       }
 
-      form.addEventListener('submit', submitForm);
+      function submitNewsLetter(e) {
+        e.preventDefault();
+
+        let user_message =
+          document.getElementById(
+            'newsLetter-input'
+          ).value;
+
+        const user_data = {
+          user_message,
+        };
+
+        const response = fetch(
+          'https://barc-foundation.herokuapp.com/insert-newsLetter',
+          {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(user_data),
+          }
+        );
+
+        formClass.reset();
+      }
+
+      formClass.addEventListener(
+        'submit',
+        submitForm
+      );
+
+      newsLetterClass.addEventListener(
+        'submit',
+        submitNewsLetter
+      );
     </script>
   </body>
 </html>

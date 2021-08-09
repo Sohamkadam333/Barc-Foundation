@@ -7,4 +7,9 @@ router.post(
   adminController.addUserToDatabase
 );
 
+router.post(
+  '/insert-newsLetter',
+  adminController.addUserToNewsLetter
+);
+
 module.exports = router;

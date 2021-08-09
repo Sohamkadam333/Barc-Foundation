@@ -1,4 +1,5 @@
-const UserModel = require('../DbSchema');
+const UserModel = require('../models/DbSchema-user');
+const NewsletterModel = require('../models/DbSchema-newsletter');
 
 const getHomePage = (req, res) => {
   res.send('Hello express');
@@ -19,7 +20,20 @@ const addUserToDatabase = (req, res) => {
     .catch((err) => console.log(err));
 };
 
+const addUserToNewsLetter = () => {
+  const { user_message } = req.body;
+  const newsLetter = new NewsletterModel({
+    user_message: user_message,
+  });
+
+  user
+    .save('Data Inserted Successfully')
+    .then((response) => console.log('success'))
+    .catch((err) => console.log(err));
+};
+
 module.exports = {
   getHomePage,
   addUserToDatabase,
+  addUserToNewsLetter,
 };
