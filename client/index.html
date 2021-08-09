@@ -1314,14 +1314,11 @@
       function submitNewsLetter(e) {
         e.preventDefault();
 
-        let user_message =
-          document.getElementById(
-            'newsLetter-input'
-          ).value;
+        let user_email = document.getElementById(
+          'newsLetter-input'
+        ).value;
 
-        const user_data = {
-          user_message,
-        };
+        const user_data = user_email;
 
         const response = fetch(
           'https://barc-foundation.herokuapp.com/insert-newsLetter',
