@@ -1318,7 +1318,11 @@
           'newsLetter-input'
         ).value;
 
-        const user_data = user_email;
+        const user_data = {
+          user_email: user_email,
+        };
+
+        console.log(user_data);
 
         const response = fetch(
           'https://barc-foundation.herokuapp.com/insert-newsLetter',
