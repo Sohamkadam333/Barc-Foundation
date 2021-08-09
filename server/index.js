@@ -27,5 +27,5 @@ app.use(routes, (err) => {
 });
 
 app.listen(PORT, (err) => {
-  console.log('serving on port 5000');
+  console.log('serving on port: ', PORT);
 });
